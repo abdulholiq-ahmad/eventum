@@ -1,5 +1,9 @@
+import fs from "fs";
+import path from "path";
+import { NextResponse } from "next/server";
+import mime from "mime";
 
-export async function GET(req: Request, { params }: Promise<{ params: { filename: string } }>) {
+export async function GET(req: Request, { params }: { params: Promise<{ filename: string }> }) {
   try {
     const { filename } = await params;
 console.log("filename", filename);
