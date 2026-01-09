@@ -1,11 +1,7 @@
-import fs from "fs";
-import path from "path";
-import { NextResponse } from "next/server";
-import mime from "mime"; // MIME turini aniqlash uchun kutubxona
 
-export async function GET(req: Request, { params }: any) {
+export async function GET(req: Request, { params }: Promise<{ params: { filename: string } }>) {
   try {
-    const { filename } = params;
+    const { filename } = await params;
 console.log("filename", filename);
     if (!filename) {
       return NextResponse.json({ error: "File not found" }, { status: 404 });
