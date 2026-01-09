@@ -196,7 +196,7 @@ const EventDetailsSidebar: React.FC<EventDetailsSidebarProps> = ({ isOpen, onClo
                     {/* Image Section - Large Square/Rect */}
                     <div className="relative aspect-square w-full rounded-3xl overflow-hidden mb-5 bg-gray-800 shadow-2xl border border-white/5 group">
                         <img 
-                            src={event.image} 
+                            src={process.env.NEXT_PUBLIC_UPLOAD_URL ? `${process.env.NEXT_PUBLIC_UPLOAD_URL}/uploads/${event.image}` : event.image}
                             alt={event.title} 
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                         />
