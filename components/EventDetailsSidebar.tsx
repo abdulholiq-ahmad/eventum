@@ -40,8 +40,10 @@ const EventDetailsSidebar: React.FC<EventDetailsSidebarProps> = ({ isOpen, onClo
       setIsRegistered(false); 
       setIsMenuOpen(false);
     } else {
-      const timer = setTimeout(() => setIsVisible(false), 300);
-      document.body.style.overflow = 'unset';
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+        document.body.style.overflow = 'auto';
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
