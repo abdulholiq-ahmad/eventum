@@ -12,6 +12,7 @@ export async function GET(req: Request, { params }: any) {
     }
 
     const filePath = path.join(process.cwd(), "public/uploads", filename);
+    console.log(filePath);
 
     // Fayl mavjudligini tekshirish
     if (!fs.existsSync(filePath)) {
