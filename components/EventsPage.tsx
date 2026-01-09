@@ -134,7 +134,7 @@ const EventsPage: React.FC = () => {
       {/* Categories Grid */}
       <div className="mb-24">
           <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-xl font-bold text-white tracking-wide text-sm">Kategoriyalar</h2>
+              <h2 className="text-xl font-bold text-white tracking-wide ">Kategoriyalar</h2>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -167,7 +167,7 @@ const EventsPage: React.FC = () => {
       {/* Featured Calendars */}
       <div className="mb-24">
            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-xl font-bold text-white tracking-wide text-sm">Tanlangan kalendarlar</h2>
+              <h2 className="text-xl font-bold text-white tracking-wide ">Tanlangan kalendarlar</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {FEATURED_CALENDARS.map((cal) => (
@@ -195,7 +195,7 @@ const EventsPage: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
               <div>
                   <div className="flex items-center gap-3 mb-2">
-                      <h2 className="text-xl font-bold text-white tracking-wide text-sm">Shaharlar</h2>
+                      <h2 className="text-xl font-bold text-white tracking-wide ">Shaharlar</h2>
                   </div>
                   <p className="text-gray-400 font-medium">Shahar hayotini kashf eting</p>
               </div>

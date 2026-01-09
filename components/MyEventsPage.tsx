@@ -297,7 +297,7 @@ const MyEventsPage: React.FC<MyEventsPageProps> = ({ onCreateEvent, onEditEvent 
                                                 <div className="w-full sm:w-[150px] aspect-square rounded-xl overflow-hidden bg-gray-800 border border-white/5 flex-shrink-0 group-hover:border-white/20 transition-all flex items-center justify-center">
                                                     {event.image ? (
                                                         <img 
-                                                            src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}/uploads/${event.image}`}
+                                                            src={`${event.image}`}
                                                             alt={event.title}
                                                             className="w-full h-full object-cover"
                                                         />
