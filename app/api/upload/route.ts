@@ -50,8 +50,9 @@ export async function POST(req: NextRequest) {
     const filepath = join(uploadsDir, filename);
     await writeFile(filepath, buffer);
 
-    // Return the public URL
-    const publicUrl = `/uploads/${filename}`;
+    // Return the public URL with domain
+    const uploadUrl = process.env.NEXT_PUBLIC_UPLOAD_URL || 'http://localhost:3000';
+    const publicUrl = `${uploadUrl}/uploads/${filename}`;
 
     return NextResponse.json({
       success: true,
