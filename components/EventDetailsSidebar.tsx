@@ -36,13 +36,11 @@ const EventDetailsSidebar: React.FC<EventDetailsSidebarProps> = ({ isOpen, onClo
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true);
-      document.body.style.overflow = 'hidden';
       setIsRegistered(false); 
       setIsMenuOpen(false);
     } else {
       const timer = setTimeout(() => {
         setIsVisible(false);
-        document.body.style.overflow = 'auto';
       }, 300);
       return () => clearTimeout(timer);
     }
