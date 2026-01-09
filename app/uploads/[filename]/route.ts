@@ -28,6 +28,7 @@ export async function GET(req: Request, { params }: any) {
       headers: { "Content-Type": mimeType },
     });
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
 }
