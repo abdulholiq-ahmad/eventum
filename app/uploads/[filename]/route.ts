@@ -6,7 +6,7 @@ import mime from "mime"; // MIME turini aniqlash uchun kutubxona
 export async function GET(req: Request, { params }: any) {
   try {
     const { filename } = params;
-
+console.log("filename", filename);
     if (!filename) {
       return NextResponse.json({ error: "File not found" }, { status: 404 });
     }
