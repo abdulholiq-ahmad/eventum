@@ -1,17 +1,18 @@
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
-import mime from "mime"; // MIME turini aniqlash uchun kutubxona
+import mime from "mime";
 
-export async function GET(req: Request, { params }: any) {
+export async function GET(req: Request, { params }: { params: Promise<{ filename: string }> }) {
   try {
-    const { filename } = params;
-
+    const { filename } = await params;
+console.log("filename", filename);
     if (!filename) {
       return NextResponse.json({ error: "File not found" }, { status: 404 });
     }
 
     const filePath = path.join(process.cwd(), "public/uploads", filename);
+    console.log(filePath);
 
     // Fayl mavjudligini tekshirish
     if (!fs.existsSync(filePath)) {
@@ -27,6 +28,7 @@ export async function GET(req: Request, { params }: any) {
       headers: { "Content-Type": mimeType },
     });
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
 }
